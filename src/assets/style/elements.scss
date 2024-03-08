@@ -1,0 +1,225 @@
+@import "./fonts.scss";
+@import "./variables.scss";
+
+.hero-button {
+  width: auto;
+  display: block;
+  height: 72px;
+  border-radius: 60px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 32px 0px 60px;
+  font-size: 20px;
+  line-height: 130%;
+  font-family: "DisplayRegular";
+  color: white;
+  text-decoration: unset;
+  position: relative;
+  left: -72px;
+  transform-style: preserve-3d;
+  background: $primari;
+  transition: 0.3s ease-in-out;
+  &::before {
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 100px;
+    position: absolute;
+    content: "";
+    left: 32px;
+    top: calc(50% - 6px);
+  }
+  &::after {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #ff087e -40.02%, #0057ff 136.94%);
+    border-radius: 100px;
+    position: absolute;
+    transform: translateZ(-1px);
+    transition: 0.3s ease-in-out;
+    content: "";
+    left: 0;
+    top: 0;
+  }
+  i {
+    display: block;
+    width: 72px;
+    height: 72px;
+    background: $primari;
+    border-radius: 100px;
+    right: -72px;
+    position: absolute;
+    transition: 0.3s ease-in-out;
+    &::before {
+      width: 24px;
+      height: 24px;
+      background: url(../img/icons/arrow-right.svg) no-repeat center;
+      position: absolute;
+      content: "";
+      left: calc(50% - 12px);
+      top: calc(50% - 12px);
+      transform: rotate(-45deg);
+      transition: 0.3s ease-in-out;
+    }
+  }
+  &:hover {
+    background: transparent;
+    &::after {
+      width: calc(100% + 72px);
+    }
+    i {
+      background: transparent;
+      border-left: unset;
+      border-radius: 0 100px 100px 0;
+      &::before {
+        transform: rotate(0deg);
+      }
+    }
+  }
+  &:active {
+    transition: 0s;
+    &::after {
+      background: $primari;
+      transition: 0s;
+    }
+  }
+}
+
+.primary-button {
+  width: auto;
+  display: block;
+  height: 65px;
+  border-radius: 60px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 36px 0px 56px;
+  font-size: 28px;
+  line-height: 130%;
+  font-family: "DisplayRegular";
+  color: white;
+  text-decoration: unset;
+  position: relative;
+  transform-style: preserve-3d;
+  background: transparent;
+  transition: 0.3s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  &::before {
+    width: 12px;
+    height: 12px;
+    background: $primari;
+    border-radius: 100px;
+    position: absolute;
+    content: "";
+    left: 32px;
+    top: calc(50% - 6px);
+    transition: 0.3s ease-in-out;
+  }
+  &::after {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #ff087e -40.02%, #0057ff 136.94%);
+    border-radius: 100px;
+    position: absolute;
+    transform: translateZ(-1px);
+    transition: 0.4s ease-in-out;
+    content: "";
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
+  i {
+    display: block;
+    width: 65px;
+    height: 65px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 100px;
+    right: -68px;
+    position: absolute;
+    transition: 0.3s ease-in-out;
+    &::before {
+      width: 24px;
+      height: 24px;
+      background: url(../img/icons/arrow-right.svg) no-repeat center;
+      position: absolute;
+      content: "";
+      left: calc(50% - 12px);
+      top: calc(50% - 12px);
+      transform: rotate(-45deg);
+      transition: 0.3s ease-in-out;
+    }
+  }
+  &:hover {
+    background: transparent;
+    border-right: unset;
+    border-radius: 100px 0px 0px 100px;
+    &::after {
+      width: calc(100% + 65px);
+      opacity: 1;
+    }
+    &::before {
+      background: white;
+    }
+    i {
+      right: -66px;
+      background: transparent;
+      border-left: unset;
+      border-radius: 0 100px 100px 0;
+      &::before {
+        transform: rotate(0deg);
+      }
+    }
+  }
+  &:active {
+    transition: 0s;
+    &::after {
+      background: $primari;
+      transition: 0s;
+    }
+  }
+}
+
+.secondary-button {
+  font-family: "DisplayRegular";
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 122%;
+  color: white;
+  border-radius: 60px;
+  padding: 0 32px;
+  height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: unset;
+  overflow: hidden;
+  transition: 0.3s;
+  position: relative;
+  &::after,
+  &::before {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    content: "";
+    opacity: 0;
+    transition: 0.3s;
+    z-index: -1;
+  }
+  &::after {
+    background: $primari;
+    opacity: 1;
+  }
+  &::before {
+    background: linear-gradient(100deg, #ff087e -40.02%, #0057ff 136.94%);
+  }
+  &:hover {
+    &::after {
+      opacity: 0;
+    }
+    &::before {
+      opacity: 1;
+    }
+  }
+}

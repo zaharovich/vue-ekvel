@@ -1,0 +1,17 @@
+// colors//
+
+$background: #05061d;
+$primari: #0057ff;
+$secondary: #ff087e;
+
+// end colors //
+
+// text-colors //
+$text-secondary: #a7a8c8;
+
+.text-gradient {
+  background: linear-gradient(93deg, #ff087e -29.19%, #0075ff 147.43%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

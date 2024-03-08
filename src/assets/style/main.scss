@@ -1,0 +1,63 @@
+@import "./elements.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+p,
+a,
+span,
+li,
+h1,
+h2,
+h3 {
+  font-family: "DisplayRegular";
+  color: white;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+body {
+  background: $background;
+}
+.wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 1344px;
+  margin: 0 auto;
+}
+
+.herosection {
+  background: url(../img/main-gradient.svg) no-repeat center;
+  background-position: 100% 10%;
+  .hero-button {
+    top: -20px;
+  }
+}
+.heroimg {
+  width: 100%;
+  max-width: 1344px;
+  margin: 0 auto 75px;
+  display: block;
+  position: relative;
+  top: 23px;
+  pointer-events: none;
+}
+.hero-block {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.herotext {
+  position: relative;
+  top: -139px;
+  left: 50px;
+}

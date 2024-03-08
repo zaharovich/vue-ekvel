@@ -1,0 +1,284 @@
+@import "../fonts.scss";
+@import "../variables.scss";
+
+.mockups {
+  position: relative;
+  transform-style: preserve-3d;
+  margin-bottom: 100px;
+  &::before {
+    width: 622px;
+    height: 535px;
+    border-radius: 662.935px;
+    opacity: 0.15;
+    background: #0057ff;
+    filter: blur(135px);
+    transform: rotate(-150deg);
+    flex-shrink: 0;
+    position: absolute;
+    content: "";
+    transform: translateZ(-1px);
+  }
+  &::after {
+    width: 622px;
+    height: 535px;
+    border-radius: 984px;
+    opacity: 0.1;
+    background: #ff087e;
+    filter: blur(135px);
+    transform: rotate(150deg);
+    flex-shrink: 0;
+    position: absolute;
+    content: "";
+    transform: translateZ(-1px);
+    top: 150px;
+    right: 80px;
+  }
+  .mockup-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 32px;
+
+    .mockup-item {
+      width: 100%;
+      max-width: 432px;
+      height: auto;
+      border-radius: 20px;
+      border: 0.5px solid rgba(255, 255, 255, 0.15);
+      overflow: hidden;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      position: relative;
+      &::after {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        background: linear-gradient(
+          85deg,
+          rgba(0, 87, 255, 0.3) 10.34%,
+          rgba(255, 8, 126, 0.3) 116.95%
+        );
+        backdrop-filter: blur(17px);
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0;
+        opacity: 0;
+        z-index: -1;
+        transition: 0.3s;
+      }
+      .slider-mockup {
+        width: 100%;
+        max-height: 268px;
+        margin: 0;
+        position: relative;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        .swiper-button-prev,
+        .swiper-button-next {
+          width: 36px;
+          height: 36px;
+          border-radius: 500px;
+          border: 1px solid rgba(255, 255, 255, 0.15);
+          background: rgba(255, 255, 255, 0.03);
+          transition: 0.3s;
+          z-index: 1;
+          opacity: 0;
+          cursor: pointer;
+          &:after {
+            display: none;
+          }
+          &::before {
+            width: 20px;
+            height: 20px;
+            background: url(../../img/icons/arrow-right.svg) no-repeat center;
+            position: absolute;
+            content: "";
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+          &:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+          }
+        }
+        .swiper-button-prev {
+          &::before {
+            background: url(../../img/icons/arrow-left.svg) no-repeat center;
+          }
+        }
+      }
+
+      .mockup-info {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(17px);
+        padding: 32px 24px 24px 24px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        .mockup-name {
+          font-size: 24px;
+          font-style: normal;
+          line-height: 140%;
+          margin-bottom: 10px;
+          display: block;
+        }
+        .mockup-anons {
+          height: 100vh;
+          max-height: 78px;
+          font-family: "Light";
+          color: $text-secondary;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 160%; /* 25.6px */
+          display: block;
+          margin-bottom: 24px;
+        }
+        .mockup-price {
+          width: 86px;
+          border-radius: 100px;
+          background: rgba(255, 255, 255, 0.03);
+          padding: 20px 24px;
+          height: 52px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: flex-start;
+          font-family: "Light";
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 122%;
+          transition: 0.4s;
+          position: relative;
+          overflow: hidden;
+          &::after {
+            width: 24px;
+            height: 24px;
+            background: url(../../img/icons/cart-plus.svg) no-repeat center;
+            position: absolute;
+            content: "";
+            right: 70px;
+            opacity: 0;
+            transition: 0.3s;
+          }
+          &::before {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+              100deg,
+              #ff087e -40.02%,
+              #0057ff 136.94%
+            );
+            position: absolute;
+            content: "";
+            transition: 0.3s;
+            z-index: -1;
+            left: 0;
+            top: 0;
+            opacity: 0;
+          }
+          &:hover {
+            background: transparent;
+            &::before {
+              opacity: 1;
+            }
+          }
+        }
+        .mockup-like {
+          width: 86px;
+          height: 52px;
+          font-family: "Light";
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 160%;
+          color: $text-secondary;
+          position: relative;
+          display: block;
+          padding-right: 32px;
+          padding-left: 16px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          border-radius: 100px;
+          overflow: hidden;
+          &::after {
+            width: 24px;
+            height: 24px;
+            background: url(../../img/icons/heart.svg) no-repeat center;
+            position: absolute;
+            content: "";
+            right: 16px;
+            top: calc(50% - 13px);
+            opacity: 0.5;
+          }
+          &::before {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+              100deg,
+              #ff087e -40.02%,
+              #0057ff 136.94%
+            );
+            position: absolute;
+            content: "";
+            transition: 0.3s;
+            z-index: -1;
+            left: 0;
+            top: 0;
+            opacity: 0;
+          }
+          &:hover {
+            color: white;
+            background: transparent;
+            &::before {
+              opacity: 1;
+            }
+          }
+
+          &.liked {
+            color: white;
+            &::after {
+              opacity: 1;
+              background: url(../../img/icons/liked-heart.svg) no-repeat center;
+            }
+          }
+        }
+      }
+      &:hover {
+        &::after {
+          opacity: 1;
+        }
+        .swiper-button-prev,
+        .swiper-button-next {
+          opacity: 1;
+        }
+        .mockup-price {
+          width: 297px;
+          background: $primari;
+          &::after {
+            right: 24px;
+            opacity: 1;
+            transition: 0.7s;
+          }
+        }
+        .mockup-like {
+          background: rgba(255, 255, 255, 0.03);
+          &::after {
+            background: url(../../img/icons/heart-border.svg) no-repeat center;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
